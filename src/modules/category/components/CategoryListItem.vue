@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <h5>Nombre de categoría</h5>
-        <p>
+    <div class="card card-body">
+        <h4 class="card-title">Titulo de la categoría</h4>
+        <p class="card-text">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid,
             quidem sed? Reprehenderit iste quasi dolor ratione magnam aperiam
             assumenda odio voluptatum recusandae autem nobis repudiandae
@@ -14,4 +14,8 @@
 export default {};
 </script>
 
-<style></style>
+<style scoped>
+.card-text {
+    margin-top: 12px;
+}
+</style>

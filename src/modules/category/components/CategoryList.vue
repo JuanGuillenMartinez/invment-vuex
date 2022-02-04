@@ -52,8 +52,7 @@ export default {
     height: calc(100vh - 140px);
     overflow: scroll;
 }
-/* .categories-container {
-    display: grid;
-    grid-template-rows: 1fr 9fr;
-} */
+::-webkit-scrollbar {
+    display: none;
+}
 </style>
