@@ -1,5 +1,5 @@
 <template>
-    <div class="card card-body">
+    <div @click="goToCategory()" class="card card-body">
         <h4 class="card-title">Titulo de la categoría</h4>
         <p class="card-text">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid,
@@ -11,7 +11,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+    methods: {
+        goToCategory() {
+            this.$router.push( { name: 'category', params: { id: 10 } } )
+        }
+    }
+};
 </script>
 
 <style scoped>
