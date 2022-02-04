@@ -2,7 +2,7 @@ export default {
     name: "categories",
     component: () =>
         import(
-            /* webpackChunkName: "categories-index" */ "../layouts/Categories.vue"
+            /* webpackChunkName: "categories-index" */ "../layouts/CategoryIndex.vue"
         ),
     children: [
         {
