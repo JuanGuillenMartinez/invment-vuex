@@ -1,45 +1,32 @@
 <template>
-    <div class="container-view">
-        <div class="categories-container container-margin">
-            <div class="search-container">
-                <div class="search-input">
-                    <input
-                        v-model="inputSearch"
-                        type="text"
-                        class="form-control"
-                        placeholder="Escriba la categoría"
-                    />
-                </div>
-                <div class="search-button">
-                    <p>
-                        <button
-                            class="btn btn-primary search-btn"
-                            type="button"
-                        >
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </button>
-                    </p>
-                </div>
+    <div class="container-search-list">
+        <div class="search-container">
+            <div class="search-input">
+                <input
+                    v-model="inputSearch"
+                    type="text"
+                    class="form-control"
+                    placeholder="Escriba la categoría"
+                />
             </div>
-            <div class="list-container">
-                <div>
-                    <h5>Nombre de categoría</h5>
-                    <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit. Aliquid, quidem sed? Reprehenderit iste quasi
-                        dolor ratione magnam aperiam assumenda odio voluptatum
-                        recusandae autem nobis repudiandae excepturi numquam,
-                        perspiciatis consectetur aliquam.
-                    </p>
-                </div>
+            <div class="search-button">
+                <p>
+                    <button class="btn btn-primary search-btn" type="button">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </p>
             </div>
+        </div>
+        <div class="list-container">
+            <CategoryListItem />
         </div>
     </div>
 </template>
 
 <script>
+import CategoryListItem from "./CategoryListItem.vue";
 export default {
-    components: {  },
+    components: { CategoryListItem },
     data() {
         return {
             inputSearch: "",
@@ -49,9 +36,9 @@ export default {
 };
 </script>
 
-<style>
-.container-margin {
-    margin: 12px;
+<style scoped>
+.container-search-list {
+    margin: 16px;
 }
 .search-container {
     display: grid;

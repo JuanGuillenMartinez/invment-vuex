@@ -17,7 +17,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .container-layout {
     display: grid;
     grid-template-columns: 3fr 7fr;
