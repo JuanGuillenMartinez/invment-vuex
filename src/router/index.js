@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import auth from '../modules/auth/router'
+import categoriesRoutes from '../modules/category/router'
 
 const routes = [
   {
@@ -19,7 +20,11 @@ const routes = [
   {
     path: '/auth',
     ...auth
-  }
+  },
+  {
+    path: '/categories',
+    ...categoriesRoutes
+  },
 ]
 
 const router = createRouter({
