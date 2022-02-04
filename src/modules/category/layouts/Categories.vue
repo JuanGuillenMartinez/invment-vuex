@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import CategoriesList from "../components/CategoriesList.vue";
+import CategoriesList from "../components/CategoryList.vue";
 import Navbar from "../components/Navbar.vue";
 export default {
     components: {

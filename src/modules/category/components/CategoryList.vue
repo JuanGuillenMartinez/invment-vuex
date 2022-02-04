@@ -34,16 +34,12 @@
                 </div>
             </div>
         </div>
-        <div class="category-container container-margin">
-            <Category />
-        </div>
     </div>
 </template>
 
 <script>
-import Category from "./Category.vue";
 export default {
-    components: { Category },
+    components: {  },
     data() {
         return {
             inputSearch: "",
@@ -54,10 +50,6 @@ export default {
 </script>
 
 <style>
-.container-view {
-    display: grid;
-    grid-template-columns: 3fr 7fr;
-}
 .container-margin {
     margin: 12px;
 }
