@@ -19,6 +19,9 @@
         </div>
         <div class="list-container">
             <CategoryListItem />
+            <CategoryListItem />
+            <CategoryListItem />
+            <CategoryListItem />
         </div>
     </div>
 </template>

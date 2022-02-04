@@ -24,4 +24,8 @@ export default {
 .card-text {
     margin-top: 12px;
 }
+div {
+    cursor: pointer;
+    margin-bottom: 10px;
+}
 </style>
