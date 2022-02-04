@@ -13,5 +13,13 @@ export default {
                     /* webpackChunkName: "categories-no-entry" */ "../views/NoEntrySelected.vue"
                 ),
         },
+        {
+            path: ":id",
+            name: "category",
+            component: () =>
+                import(
+                    /* webpackChunkName: "category-view" */ "../views/Category.vue"
+                ),
+        },
     ],
 };
