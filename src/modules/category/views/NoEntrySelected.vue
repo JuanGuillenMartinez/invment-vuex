@@ -1,11 +1,18 @@
 <template>
     <div>
         <h1>Categoría no seleccionada</h1>
+        <float-button />
     </div>
 </template>
 
 <script>
-export default {};
+import FloatButton from '../components/FloatButton.vue';
+
+export default {
+    components: {
+        FloatButton,
+    }
+};
 </script>
 
 <style scoped>
