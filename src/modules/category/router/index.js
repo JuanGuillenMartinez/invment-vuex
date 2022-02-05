@@ -18,7 +18,7 @@ export default {
             name: "category",
             component: () =>
                 import(
-                    /* webpackChunkName: "category-view" */ "../views/Category.vue"
+                    /* webpackChunkName: "category-view" */ "../views/CategoryItem.vue"
                 ),
         },
     ],
