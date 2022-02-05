@@ -43,7 +43,7 @@
             </div>
         </div>
     </div>
-    <float-button />
+    <FloatButton icon='fa-floppy-disk' />
 </template>
 
 <script>

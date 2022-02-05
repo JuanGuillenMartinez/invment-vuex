@@ -1,11 +1,23 @@
 <template>
     <button class="btn btn-primary">
-        <i class="fa fa-plus"></i>
+        <i :class="getIcon()"></i>
     </button>
 </template>
 
 <script>
-export default {};
+export default {
+    props: {
+        icon: {
+            type: String,
+            default: 'fa-plus'
+        }
+    },
+    methods: {
+        getIcon() {
+            return `fa ${ this.icon }`
+        }
+    }
+};
 </script>
 
 <style scoped>

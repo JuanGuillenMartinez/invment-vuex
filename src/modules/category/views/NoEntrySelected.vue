@@ -1,7 +1,7 @@
 <template>
     <div>
         <h1>Categoría no seleccionada</h1>
-        <float-button />
+        <FloatButton />
     </div>
 </template>
 
