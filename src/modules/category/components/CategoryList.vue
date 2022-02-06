@@ -18,22 +18,24 @@
             </div>
         </div>
         <div class="list-container">
-            <CategoryListItem />
-            <CategoryListItem />
-            <CategoryListItem />
-            <CategoryListItem />
+            <CategoryListItem v-for="category in categoriesList" :key="category.id" :category=category />
         </div>
     </div>
 </template>
 
 <script>
 import CategoryListItem from "./CategoryListItem.vue";
+import { mapGetters } from 'vuex'
 export default {
     components: { CategoryListItem },
     data() {
         return {
             inputSearch: "",
+            categories: [],
         };
+    },
+    computed: {
+        ...mapGetters('category', ['categoriesList']),
     },
     methods: {},
 };
