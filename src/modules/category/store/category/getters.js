@@ -13,9 +13,19 @@ export const categoriesList = (state) => {
     return state.categories;
 };
 
-export const categoriesByName = ( {categories} ) => ( name ) => {
-    if( name ) {
-        return categories.filter( category => category.name.includes( name ) )
-    }
-    return categories
+export const categoriesByName =
+    ({ categories }) =>
+    (name) => {
+        if (name) {
+            return categories.filter((category) =>
+                category.name.includes(name)
+            );
+        }
+        return categories;
+    };
+
+export const categoryById = ({ categories }) => ( id ) => {
+    console.log(id);
+    console.log(categories);
+    return id;
 };

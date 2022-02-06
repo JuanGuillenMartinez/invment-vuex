@@ -43,15 +43,31 @@
             </div>
         </div>
     </div>
-    <FloatButton icon='fa-floppy-disk' />
+    <FloatButton icon="fa-floppy-disk" />
 </template>
 
 <script>
 import FloatButton from "../components/FloatButton.vue";
-
+import { mapGetters } from "vuex";
 export default {
     components: {
         FloatButton,
+    },
+    data() {
+        return {
+            currentCategory: null
+        }
+    },
+    computed: {
+        ...mapGetters('category', ['categoryById']),
+        // getCurrentCategory() {
+        //     const id = this.$router.params.id;
+        //     return this.categoryById( id )
+        // },
+    },
+    created() {
+        console.log(this.$route.params.id);
+        // this.currentCategory = this.getCurrentCategory();
     },
 };
 </script>
