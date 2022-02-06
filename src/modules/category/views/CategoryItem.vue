@@ -58,6 +58,12 @@ export default {
             currentCategory: null
         }
     },
+    props: {
+        id: {
+            type: String,
+            required: true
+        }
+    },
     computed: {
         ...mapGetters('category', ['categoryById']),
         // getCurrentCategory() {
@@ -66,7 +72,7 @@ export default {
         // },
     },
     created() {
-        console.log(this.$route.params.id);
+        console.log(this.id);
         // this.currentCategory = this.getCurrentCategory();
     },
 };
