@@ -25,7 +25,6 @@ export const categoriesByName =
     };
 
 export const categoryById = ({ categories }) => ( id ) => {
-    console.log(id);
-    console.log(categories);
-    return id;
+    const category = categories.find(( category ) => category.id === parseInt(id));
+    return ( category ) ? { ...category } : undefined
 };

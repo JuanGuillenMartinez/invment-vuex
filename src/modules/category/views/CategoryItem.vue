@@ -6,7 +6,7 @@
                 <div>
                     <label class="form-label">ID de categoría</label>
                     <input
-                        value="1"
+                        :value="currentCategory.id"
                         type="number"
                         class="form-control"
                         readonly
@@ -15,6 +15,7 @@
                 <div>
                     <label class="form-label">Nombre</label>
                     <input
+                        :value="currentCategory.name"
                         type="text"
                         class="form-control"
                         placeholder="Nombre de la categoría"
@@ -23,21 +24,21 @@
                 <div>
                     <label class="form-label">Creado el</label>
                     <input
+                        :value="currentCategory.created_at"
                         type="datetime-local"
                         class="form-control"
                         id="created-at"
                         name="created_at"
-                        value="2022-02-04T19:30"
                     />
                 </div>
                 <div>
-                    <label class="form-label">Creado el</label>
+                    <label class="form-label">Actualizado el</label>
                     <input
+                        :value="currentCategory.updated_at"
                         type="datetime-local"
                         class="form-control"
                         id="updated_at"
                         name="updated_at"
-                        value="2022-02-04T19:30"
                     />
                 </div>
             </div>
@@ -55,25 +56,29 @@ export default {
     },
     data() {
         return {
-            currentCategory: null
-        }
+            currentCategory: null,
+        };
     },
     props: {
         id: {
             type: String,
-            required: true
-        }
+            required: true,
+        },
     },
     computed: {
-        ...mapGetters('category', ['categoryById']),
-        // getCurrentCategory() {
-        //     const id = this.$router.params.id;
-        //     return this.categoryById( id )
-        // },
+        ...mapGetters("category", ["categoryById"]),
+    },
+    methods: {
+        getCurrentCategory() {
+            return this.categoryById(this.id);
+        },
+        showCurrentCategory() {
+            const category = this.getCurrentCategory();
+            this.currentCategory = category;
+        },
     },
     created() {
-        console.log(this.id);
-        // this.currentCategory = this.getCurrentCategory();
+        this.showCurrentCategory();
     },
 };
 </script>
