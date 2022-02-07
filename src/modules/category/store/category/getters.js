@@ -15,18 +15,20 @@ export const categoriesList = (state) => {
 
 export const categoriesByName = ({ categories }) => ( name ) => {
         if (name) {
-            return categories.filter(( category ) => {
-                return category.name.toLowerCase().includes(name.toLowerCase())
+            return categories.filter((category) => {
+                return category.name.toLowerCase().includes(name.toLowerCase());
             });
         }
         return categories;
 };
 
-export const categoryById =
-    ({ categories }) =>
-    (id) => {
+export const categoryById = ({ categories }) => ( id ) => {
         const category = categories.find(
             (category) => category.id === parseInt(id)
         );
         return category ? { ...category } : undefined;
-    };
+};
+
+export const isLoadingComponent = ( { isLoading } ) => {
+    return isLoading;
+}
