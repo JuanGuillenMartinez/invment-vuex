@@ -77,6 +77,11 @@ export default {
             this.currentCategory = category;
         },
     },
+    watch: {
+        id() {
+            this.showCurrentCategory();
+        }
+    },
     created() {
         this.showCurrentCategory();
     },
