@@ -13,9 +13,9 @@ export const categoriesList = (state) => {
     return state.categories;
 };
 
-export const categoriesByName = ({ categories }) => (name) => {
+export const categoriesByName = ({ categories }) => ( name ) => {
         if (name) {
-            return categories.filter((category) => {
+            return categories.filter(( category ) => {
                 return category.name.toLowerCase().includes(name.toLowerCase())
             });
         }

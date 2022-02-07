@@ -29,22 +29,27 @@
 
 <script>
 import CategoryListItem from "./CategoryListItem.vue";
-import { mapGetters } from "vuex";
+import { mapActions, mapGetters } from "vuex";
+
 export default {
     components: { CategoryListItem },
     data() {
         return {
             inputSearch: "",
-            categories: [],
         };
     },
     computed: {
-        ...mapGetters("category", ["categoriesList", "categoriesByName"]),
+        ...mapGetters("category", ["categoriesByName"]),
         getCategoriesByName() {
             return this.categoriesByName( this.inputSearch );
         },
     },
-    methods: {},
+    methods: {
+        ...mapActions('category', [ 'getCategoriesList' ]),
+    },
+    created() {
+        this.getCategoriesList();
+    }
 };
 </script>
 
