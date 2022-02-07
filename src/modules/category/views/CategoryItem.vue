@@ -23,13 +23,7 @@
                 </div>
                 <div>
                     <label class="form-label">Creado el</label>
-                    <input
-                        :value="currentCategory.created_at"
-                        type="datetime-local"
-                        class="form-control"
-                        id="created-at"
-                        name="created_at"
-                    />
+                    <Datepicker locale="es" v-model="created_at" />
                 </div>
                 <div>
                     <label class="form-label">Actualizado el</label>
@@ -57,6 +51,7 @@ export default {
     data() {
         return {
             currentCategory: null,
+            currentDate: null,
         };
     },
     props: {
@@ -67,11 +62,17 @@ export default {
     },
     computed: {
         ...mapGetters("category", ["categoryById"]),
-        created_at() {
-            const utcDate = new Date(this.currentCategory.created_at);
-            const localDate = utcDate.toLocaleString();
-            console.log(localDate);
-            return localDate;
+        created_at: {
+            get() {
+                const utcDate = new Date(this.currentCategory.created_at);
+                // const localDate = utcDate.toLocaleString();
+                // console.log(localDate);
+                return utcDate;
+            },
+            // setter
+            set(newValue) {
+                this.currentDate = newValue;
+            },
         },
         // updated_at() {
 
