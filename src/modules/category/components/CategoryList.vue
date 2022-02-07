@@ -1,4 +1,5 @@
 <template>
+    <custom-loader v-if="isLoadingComponent" :isLoading="isLoadingComponent" />
     <div class="container-search-list">
         <div class="search-container">
             <div class="search-input">
@@ -30,16 +31,17 @@
 <script>
 import CategoryListItem from "./CategoryListItem.vue";
 import { mapActions, mapGetters } from "vuex";
+import CustomLoader from './CustomLoader.vue';
 
 export default {
-    components: { CategoryListItem },
+    components: { CategoryListItem, CustomLoader },
     data() {
         return {
             inputSearch: "",
         };
     },
     computed: {
-        ...mapGetters("category", ["categoriesByName"]),
+        ...mapGetters("category", ['categoriesByName', 'isLoadingComponent']),
         getCategoriesByName() {
             return this.categoriesByName( this.inputSearch );
         },

@@ -5,5 +5,10 @@
 // }
 
 export const changeCategoriesList = ( state, data ) => {
-     state.categories = data
+     state.categories = data;
+     state.isLoading = false;
+}
+
+export const categoriesAreLoading = ( state ) => {
+     state.isLoading = true;
 }

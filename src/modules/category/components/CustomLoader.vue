@@ -22,3 +22,8 @@ export default {
     },
 };
 </script>
+<style scoped>
+.vld-parent {
+    height: 100%;
+}
+</style>

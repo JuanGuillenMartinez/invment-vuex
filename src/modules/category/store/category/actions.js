@@ -8,6 +8,7 @@ import axios from "@/api/AxiosInstance";
 
 export const getCategoriesList = async ({ commit }) => {
     try {
+        commit('categoriesAreLoading');
         const {
             data: { data },
         } = await axios.get("/categories");
