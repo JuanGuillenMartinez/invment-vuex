@@ -13,18 +13,20 @@ export const categoriesList = (state) => {
     return state.categories;
 };
 
-export const categoriesByName =
-    ({ categories }) =>
-    (name) => {
+export const categoriesByName = ({ categories }) => (name) => {
         if (name) {
-            return categories.filter((category) =>
-                category.name.includes(name)
-            );
+            return categories.filter((category) => {
+                return category.name.toLowerCase().includes(name.toLowerCase())
+            });
         }
         return categories;
-    };
-
-export const categoryById = ({ categories }) => ( id ) => {
-    const category = categories.find(( category ) => category.id === parseInt(id));
-    return ( category ) ? { ...category } : undefined
 };
+
+export const categoryById =
+    ({ categories }) =>
+    (id) => {
+        const category = categories.find(
+            (category) => category.id === parseInt(id)
+        );
+        return category ? { ...category } : undefined;
+    };
