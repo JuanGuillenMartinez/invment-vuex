@@ -67,6 +67,15 @@ export default {
     },
     computed: {
         ...mapGetters("category", ["categoryById"]),
+        created_at() {
+            const utcDate = new Date(this.currentCategory.created_at);
+            const localDate = utcDate.toLocaleString();
+            console.log(localDate);
+            return localDate;
+        },
+        // updated_at() {
+
+        // }
     },
     methods: {
         getCurrentCategory() {
@@ -80,7 +89,7 @@ export default {
     watch: {
         id() {
             this.showCurrentCategory();
-        }
+        },
     },
     created() {
         this.showCurrentCategory();
