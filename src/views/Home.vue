@@ -1,6 +1,9 @@
 <template>
     <div class="home">
         <img alt="Vue logo" src="../assets/logo.png" />
+        <div class="card">
+            <div class="card-body">Pequeño proyecto para aprender Vue 3 con Vuex y Vue Router</div>
+        </div>
     </div>
 </template>
 
@@ -8,14 +11,12 @@
 // @ is an alias to /src
 export default {
     name: "Home",
-    methods: {
-        
-    }
+    methods: {},
 };
 </script>
 
 <style scoped>
-    .div-login {
-        text-align: end;
-    }
+.home {
+    text-align: center;
+}
 </style>
