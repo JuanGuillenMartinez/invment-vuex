@@ -19,3 +19,7 @@ export const changeCategoryById = ( state , data ) => {
      state.categories[index] = data;
      state.isLoading = false;
 }
+
+// export const refreshCategories = ( state , data ) => {
+
+// }

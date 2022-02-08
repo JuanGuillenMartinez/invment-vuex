@@ -21,8 +21,8 @@
                         placeholder="Nombre de la categoría"
                     />
                 </div>
-                <button type="button" class="btn btn-danger btn-delete">
-                    Danger
+                <button type="button" class="btn btn-danger btn-delete" @click="destroy">
+                    Eliminar
                 </button>
             </div>
         </div>
@@ -31,8 +31,8 @@
 </template>
 
 <script>
-import FloatButton from "../components/FloatButton.vue";
-import { mapActions, mapGetters } from "vuex";
+import FloatButton from '../components/FloatButton.vue';
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
     components: {
@@ -50,13 +50,10 @@ export default {
         },
     },
     computed: {
-        ...mapGetters("category", ["categoryById"]),
-        // updated_at() {
-
-        // }
+        ...mapGetters('category', ['categoryById']),
     },
     methods: {
-        ...mapActions("category", ["updateCategory"]),
+        ...mapActions('category', ['updateCategory', 'deleteCategory']),
         getCurrentCategory() {
             return this.categoryById(this.id);
         },
@@ -71,6 +68,9 @@ export default {
             };
             this.updateCategory(data);
         },
+        destroy() {
+            this.deleteCategory(this.currentCategory.id);
+        }
         
     },
     watch: {
