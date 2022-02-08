@@ -1,6 +1,7 @@
 <template>
-  <router-view/>
-  <!-- <div id="nav">
+    <navbar-component />
+    <router-view />
+    <!-- <div id="nav">
     <router-link to="/">Inicio</router-link> |
     <router-link to="/about">Acerca de</router-link> | 
     <router-link to="/auth">Autenticación</router-link> | 
@@ -8,25 +9,32 @@
   </div> -->
 </template>
 
+<script>
+import NavbarComponent from "@/components/NavbarComponent.vue";
+export default {
+    components: { NavbarComponent },
+};
+</script>
+
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  /* text-align: center; */
-  color: #2c3e50;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* text-align: center; */
+    color: #2c3e50;
 }
 
 #nav {
-  padding: 30px;
+    padding: 30px;
 }
 
 #nav a {
-  font-weight: bold;
-  color: #2c3e50;
+    font-weight: bold;
+    color: #2c3e50;
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+    color: #42b983;
 }
 </style>
