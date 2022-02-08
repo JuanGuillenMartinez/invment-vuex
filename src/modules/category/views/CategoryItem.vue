@@ -27,7 +27,7 @@
             </div>
         </div>
     </div>
-    <FloatButton v-on:clicked="update" icon="fa-floppy-disk" />
+    <FloatButton @on:click="update" icon="fa-floppy-disk" />
 </template>
 
 <script>
@@ -65,7 +65,6 @@ export default {
             this.currentCategory = category;
         },
         update() {
-            console.log('llego al update');
             const data = {
                 id: this.currentCategory.id,
                 name: this.currentCategory.name,
