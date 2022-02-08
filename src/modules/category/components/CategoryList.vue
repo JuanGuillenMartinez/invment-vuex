@@ -31,27 +31,30 @@
 <script>
 import CategoryListItem from "./CategoryListItem.vue";
 import { mapActions, mapGetters } from "vuex";
-import CustomLoader from './CustomLoader.vue';
+import CustomLoader from "./CustomLoader.vue";
 
 export default {
-    components: { CategoryListItem, CustomLoader },
+    components: {
+        CategoryListItem,
+        CustomLoader,
+    },
     data() {
         return {
             inputSearch: "",
         };
     },
     computed: {
-        ...mapGetters("category", ['categoriesByName', 'isLoadingComponent']),
+        ...mapGetters("category", ["categoriesByName", "isLoadingComponent"]),
         getCategoriesByName() {
-            return this.categoriesByName( this.inputSearch );
+            return this.categoriesByName(this.inputSearch);
         },
     },
     methods: {
-        ...mapActions('category', [ 'getCategoriesList' ]),
+        ...mapActions("category", ["getCategoriesList"]),
     },
     created() {
         this.getCategoriesList();
-    }
+    },
 };
 </script>
 

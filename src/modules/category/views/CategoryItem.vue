@@ -53,7 +53,7 @@ export default {
         ...mapGetters('category', ['categoryById']),
     },
     methods: {
-        ...mapActions('category', ['updateCategory', 'deleteCategory']),
+        ...mapActions('category', ['updateCategory', 'deleteCategory', 'getCategoriesList']),
         getCurrentCategory() {
             return this.categoryById(this.id);
         },
@@ -79,6 +79,7 @@ export default {
         },
     },
     created() {
+        console.log('se ejecuta el created');
         this.showCurrentCategory();
     },
 };

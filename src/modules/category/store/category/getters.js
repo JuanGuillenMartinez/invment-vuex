@@ -23,6 +23,7 @@ export const categoriesByName = ({ categories }) => ( name ) => {
 };
 
 export const categoryById = ({ categories }) => ( id ) => {
+    console.log(categories);
         const category = categories.find(
             (category) => category.id === parseInt(id)
         );
