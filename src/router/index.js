@@ -2,6 +2,8 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import auth from "../modules/auth/router";
 import categoriesRoutes from "../modules/category/router";
+import corporationRoutes from "../modules/corporation/router";
+import NoItemSelected from "../components/NoItemSelected.vue"
 
 const routes = [
     {
@@ -16,6 +18,15 @@ const routes = [
     {
         path: "/categories",
         ...categoriesRoutes,
+    },
+    {
+        path: "/corporations",
+        ...corporationRoutes,
+    },
+    {
+        path: "/error",
+        name: "NoItemSelected",
+        component: NoItemSelected,
     },
 ];
 
