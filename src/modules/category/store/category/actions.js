@@ -31,9 +31,9 @@ export const updateCategory = async ( { commit }, categoryData ) => {
 export const deleteCategory = async ( { dispatch, commit }, id ) => {
     try {
         commit('categoriesAreLoading');
-        const { data: { message } } = await axios.delete( `/categories/${ id }` );
-        console.log(message);
+        const { data: { success } } = await axios.delete( `/categories/${ id }` );
         await dispatch('getCategoriesList');
+        return success;
     } catch (error) {
         console.log(error);
     }

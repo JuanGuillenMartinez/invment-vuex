@@ -6,6 +6,7 @@
 
 export const changeCategoriesList = ( state, data ) => {
      state.categories = data;
+     state.categories = { ...data };
      state.isLoading = false;
 }
 

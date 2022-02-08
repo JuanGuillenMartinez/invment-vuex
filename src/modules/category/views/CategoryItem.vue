@@ -68,8 +68,11 @@ export default {
             };
             this.updateCategory(data);
         },
-        destroy() {
-            this.deleteCategory(this.currentCategory.id);
+        async destroy() {
+            const response = await this.deleteCategory(this.currentCategory.id);
+            if(response == true)  {
+                this.$router.push( { name: 'no-entry-selected' } );
+            }
         }
         
     },
