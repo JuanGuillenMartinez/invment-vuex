@@ -6,7 +6,7 @@
                 <div>
                     <label class="form-label">ID de categoría</label>
                     <input
-                        :value="currentCategory.id"
+                        v-model="currentCategory.id"
                         type="number"
                         class="form-control"
                         readonly
@@ -15,21 +15,24 @@
                 <div>
                     <label class="form-label">Nombre</label>
                     <input
-                        :value="currentCategory.name"
+                        v-model="currentCategory.name"
                         type="text"
                         class="form-control"
                         placeholder="Nombre de la categoría"
                     />
                 </div>
+                <button type="button" class="btn btn-danger btn-delete">
+                    Danger
+                </button>
             </div>
         </div>
     </div>
-    <FloatButton icon="fa-floppy-disk" />
+    <FloatButton v-on:clicked="update" icon="fa-floppy-disk" />
 </template>
 
 <script>
 import FloatButton from "../components/FloatButton.vue";
-import { mapGetters } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 
 export default {
     components: {
@@ -37,7 +40,7 @@ export default {
     },
     data() {
         return {
-            currentCategory: null,            
+            currentCategory: null,
         };
     },
     props: {
@@ -53,6 +56,7 @@ export default {
         // }
     },
     methods: {
+        ...mapActions("category", ["updateCategory"]),
         getCurrentCategory() {
             return this.categoryById(this.id);
         },
@@ -60,6 +64,15 @@ export default {
             const category = this.getCurrentCategory();
             this.currentCategory = category;
         },
+        update() {
+            console.log('llego al update');
+            const data = {
+                id: this.currentCategory.id,
+                name: this.currentCategory.name,
+            };
+            this.updateCategory(data);
+        },
+        
     },
     watch: {
         id() {
@@ -83,5 +96,8 @@ export default {
 }
 input {
     margin-bottom: 12px;
+}
+.btn-delete {
+    float: left;
 }
 </style>

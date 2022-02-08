@@ -17,3 +17,13 @@ export const getCategoriesList = async ({ commit }) => {
         console.log(error);
     }
 };
+
+export const updateCategory = async ( { commit }, categoryData ) => {
+    try {
+        commit('categoriesAreLoading');
+        const { data: { data } } = await axios.put( `/categories/${ categoryData.id }`, categoryData );
+        commit("changeCategoryById", data);
+    } catch (error) {
+        console.log(error);
+    }
+};

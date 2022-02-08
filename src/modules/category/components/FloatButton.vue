@@ -1,6 +1,6 @@
 <template>
     <button class="btn btn-primary">
-        <i :class="getIcon()"></i>
+        <i @click="$emit('clicked')" :class="getIcon()"></i>
     </button>
 </template>
 
@@ -16,7 +16,8 @@ export default {
         getIcon() {
             return `fa ${ this.icon }`
         }
-    }
+    },
+    emits: ['clicked']
 };
 </script>
 

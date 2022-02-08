@@ -12,3 +12,10 @@ export const changeCategoriesList = ( state, data ) => {
 export const categoriesAreLoading = ( state ) => {
      state.isLoading = true;
 }
+
+export const changeCategoryById = ( state , data ) => {
+     const id = parseInt(data.id_category);
+     const index = state.categories.findIndex( category => category.id === id );
+     state.categories[index] = data;
+     state.isLoading = false;
+}
