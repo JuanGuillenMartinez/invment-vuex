@@ -1,102 +1,91 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated class="glossy">
-      <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          @click="leftDrawerOpen = !leftDrawerOpen"
-          aria-label="Menu"
-          icon="menu"
-        />
+    <div class="q-pa-md">
+        <q-toolbar class="bg-purple text-white shadow-2 rounded-borders">
+            <q-btn flat label="Homepage" />
+            <q-space />
 
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
-      </q-toolbar>
-    </q-header>
-
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-      class="bg-grey-2"
+            <!--
+        notice shrink property since we are placing it
+        as child of QToolbar
+      -->
+            <q-tabs v-model="tab">
+                <q-tab name="tab1" label="Tab 1" />
+                <q-tab name="tab2" label="Tab 2" />
+                <q-tab name="tab3" label="Tab 3" />
+            </q-tabs>
+        </q-toolbar>
+    </div>
+    <q-tab-panels
+        v-model="tab"
+        animated
+        vertical
+        transition-prev="jump-up"
+        transition-next="jump-up"
     >
-      <q-list>
-        <q-item-label header>Essential Links</q-item-label>
-        <q-item clickable tag="a" target="_blank" href="https://quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="school" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Docs</q-item-label>
-            <q-item-label caption>quasar.dev</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://github.com/quasarframework/">
-          <q-item-section avatar>
-            <q-icon name="code" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Github</q-item-label>
-            <q-item-label caption>github.com/quasarframework</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://chat.quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="chat" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Discord Chat Channel</q-item-label>
-            <q-item-label caption>chat.quasar.dev</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://forum.quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="forum" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Forum</q-item-label>
-            <q-item-label caption>forum.quasar.dev</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://twitter.com/quasarframework">
-          <q-item-section avatar>
-            <q-icon name="rss_feed" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Twitter</q-item-label>
-            <q-item-label caption>@quasarframework</q-item-label>
-          </q-item-section>
-        </q-item>
-      </q-list>
-    </q-drawer>
+        <q-tab-panel name="tab1">
+            <div class="text-h4 q-mb-md">Mails</div>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis
+                praesentium cumque magnam odio iure quidem, quod illum numquam
+                possimus obcaecati commodi minima assumenda consectetur culpa
+                fuga nulla ullam. In, libero.
+            </p>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis
+                praesentium cumque magnam odio iure quidem, quod illum numquam
+                possimus obcaecati commodi minima assumenda consectetur culpa
+                fuga nulla ullam. In, libero.
+            </p>
+        </q-tab-panel>
 
-    <q-page-container>
-      <!-- <HelloWorld /> -->
-      <router-view />
-    </q-page-container>
-  </q-layout>
+        <q-tab-panel name="tab2">
+            <div class="text-h4 q-mb-md">Alarms</div>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis
+                praesentium cumque magnam odio iure quidem, quod illum numquam
+                possimus obcaecati commodi minima assumenda consectetur culpa
+                fuga nulla ullam. In, libero.
+            </p>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis
+                praesentium cumque magnam odio iure quidem, quod illum numquam
+                possimus obcaecati commodi minima assumenda consectetur culpa
+                fuga nulla ullam. In, libero.
+            </p>
+        </q-tab-panel>
+
+        <q-tab-panel name="tab3">
+            <div class="text-h4 q-mb-md">Movies</div>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis
+                praesentium cumque magnam odio iure quidem, quod illum numquam
+                possimus obcaecati commodi minima assumenda consectetur culpa
+                fuga nulla ullam. In, libero.
+            </p>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis
+                praesentium cumque magnam odio iure quidem, quod illum numquam
+                possimus obcaecati commodi minima assumenda consectetur culpa
+                fuga nulla ullam. In, libero.
+            </p>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis
+                praesentium cumque magnam odio iure quidem, quod illum numquam
+                possimus obcaecati commodi minima assumenda consectetur culpa
+                fuga nulla ullam. In, libero.
+            </p>
+        </q-tab-panel>
+    </q-tab-panels>
 </template>
 
 <script>
-import { ref } from 'vue'
-// import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'LayoutDefault',
-
-  components: {
-    // HelloWorld
-  },
-
-  setup () {
-    return {
-      leftDrawerOpen: ref(false)
-    }
-  }
-}
+    data() {
+        return {
+            tab: "tab1",
+        };
+    },
+};
 </script>
+
+<style></style>
